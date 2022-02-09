@@ -115,7 +115,7 @@ function Home() {
             align="left"
             fontWeight={"bold"}
           >
-            Simulador
+            Simulador  
           </Typography>
         </Grid>
         <Grid item xs={6}>
