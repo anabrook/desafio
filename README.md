@@ -1,8 +1,12 @@
-# Simulador de Investimentos:
+# Simulador de Investimentos
 
 O Simulador de Investimentos é uma aplicação Web, que facilita a simulação de investimentos dos usuários.
 
-## Requisitos Minímos:
+> Desafio proposto pela EQI Investimentos para Desenvolvedor Front-end.
+>
+> https://github.com/eqi-investimentos/desafio-frontend
+
+## Requisitos Mínimos
 
 Antes de começar verifique os requisitos mínimos abaixo e não se esqueça de clonar este repositório para a sua máquina.
 
@@ -13,8 +17,9 @@ Antes de começar verifique os requisitos mínimos abaixo e não se esqueça de 
 (https://nodejs.org/en/download/).
 
 
-## Instalação de dependências:
-* Antes de instalar a aplicação, certifique-se de possuir os requisitos mínimos. Após instalados utilize os comandos abaixo para instalar as dependências da aplicação:
+## Instalação de dependências
+
+* Antes de instalar a aplicação, certifique-se de possuir os requisitos mínimos. Após instalados, utilize os comandos abaixo para instalar as dependências da aplicação:
 
 ```bash
 $ npm install 
@@ -25,9 +30,9 @@ ou
 $ yarn install 
 ```
 
-## Execução da Aplicação:
+## Execução da Aplicação
 
-Abrir a pasta do projeto na ide de sua preferência e executar o comando abaixo no terminal para inicializar o seu projeto. 
+Abrir a pasta do projeto na IDE de sua preferência e executar o comando abaixo no terminal para inicializar o seu projeto. 
 
 ```bash
 $ npm start 
@@ -38,7 +43,7 @@ ou
 $ yarn start 
 ```
 
-## API utilizada e sua Documentação:
+## API utilizada e sua Documentação
 
 Foi utilizada a API do link abaixo para a aplicação funcionar como o esperado, para isso será preciso fazer o clone/download da API de seu respectivo repositório.
 
