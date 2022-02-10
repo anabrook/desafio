@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, useTheme } from "@mui/material";
+import { Grid, useTheme, useMediaQuery } from "@mui/material";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -38,6 +38,7 @@ export default function DataGrid(props) {
   const { data } = props;
 
   const theme = useTheme();
+  const mobile = useMediaQuery("(max-width:400px)");
 
   const formatMoney = value => {
     if (!value) return "R$0,00";
@@ -76,11 +77,16 @@ export default function DataGrid(props) {
         container
         direction="column"
         justifyContent="space-between"
-        alignItems="center"
         spacing={2}
       >
         <Grid item xs={12}>
-          <Grid container direction="row" spacing={1}>
+          <Grid
+            container
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+            spacing={1}
+          >
             <Grid item>
               <CustomPaper>
                 <PaperTitle>Valor final Bruto</PaperTitle>
@@ -102,7 +108,13 @@ export default function DataGrid(props) {
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Grid container spacing={1} direction="row">
+          <Grid
+            container
+            spacing={1}
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+          >
             <Grid item>
               <CustomPaper>
                 <PaperTitle>Valor Final Líquido</PaperTitle>
@@ -123,8 +135,10 @@ export default function DataGrid(props) {
             </Grid>
           </Grid>
         </Grid>
+        <Grid item xs={12}>
+          <Bar options={options} data={graphData} />
+        </Grid>
       </Grid>
-      <Bar options={options} data={graphData} />
     </Grid>
   );
 }

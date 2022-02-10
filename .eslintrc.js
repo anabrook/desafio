@@ -13,6 +13,6 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    "react/prop-types": false,
+    "react/prop-types": 0,
   },
 };

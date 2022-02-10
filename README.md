@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Simulador de Investimentos:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O Simulador de Investimentos é uma aplicação Web, que facilita a simulação de investimentos dos usuários.
 
-## Available Scripts
+## Requisitos Minímos:
 
-In the project directory, you can run:
+Antes de começar verifique os requisitos mínimos abaixo e não se esqueça de clonar este repositório para a sua máquina.
 
-### `npm start`
+* Node.js (latest ou lts)
+* NPM ou Yarn (A minha recomendação é o Yarn)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  - A instalação do node.js pode ser feita pelo terminal ou pelo arquivo .exe
+(https://nodejs.org/en/download/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Instalação de dependências:
+* Antes de instalar a aplicação, certifique-se de possuir os requisitos mínimos. Após instalados utilize os comandos abaixo para instalar as dependências da aplicação:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ npm install 
+```
+ou 
 
-### `npm run build`
+```bash
+$ yarn install 
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Execução da Aplicação:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Abrir a pasta do projeto na ide de sua preferência e executar o comando abaixo no terminal para inicializar o seu projeto. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+$ npm start 
+```
+ou 
 
-### `npm run eject`
+```bash
+$ yarn start 
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## API utilizada e sua Documentação:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Foi utilizada a API do link abaixo para a aplicação funcionar como o esperado, para isso será preciso fazer o clone/download da API de seu respectivo repositório.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> OBS: O frontend está apontando para a api na porta 3000, logo se recomenda iniciar o projeto do react em outra porta. Exemplo: 3001, 3002 ...
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ - https://github.com/eqi-investimentos/desafio-fake-api

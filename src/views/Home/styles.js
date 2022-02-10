@@ -3,8 +3,10 @@ import { styled } from "@mui/material/styles";
 import styledComponents from "styled-components";
 
 export const MainDiv = styledComponents(Box)`
-margin-left:50px;
-margin-right:50px;
+${props =>
+  props.mobile
+    ? "margin-left:20px;margin-right:20px;"
+    : "margin-left:50px;margin-right:50px;"}
 height: 100vh;
 display: flex;
 align-items:center;

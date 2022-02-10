@@ -1,19 +1,33 @@
 import React from "react";
-import { Grid, Typography, ButtonGroup } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  ButtonGroup,
+  useMediaQuery,
+  InputAdornment,
+} from "@mui/material";
 
-import { Input, OkButton, ClearButton, GroupButton, RowDiv } from "./styles";
+import {
+  Input,
+  OkButton,
+  ClearButton,
+  GroupButton,
+  RowDiv,
+  ColumnTitle,
+} from "./styles";
 
 export default function Form(props) {
+  const mobile = useMediaQuery("(max-width:400px)");
   const { formik } = props;
 
-  const verificaBtnIndex = (value) => {
+  const verificaBtnIndex = value => {
     if (value === formik.values.tipoIndexacao) {
       return true;
     }
     return false;
   };
 
-  const verificaBtnRendi = (value) => {
+  const verificaBtnRendi = value => {
     if (value === formik.values.tipoRendimento) {
       return true;
     }
@@ -26,9 +40,9 @@ export default function Form(props) {
         <Grid item xs={6}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <Typography variant="subtitle1" gutterBottom component="div">
+              <ColumnTitle variant="subtitle1" mobile={mobile}>
                 Rendimento
-              </Typography>
+              </ColumnTitle>
             </Grid>
             <Grid item xs={12}>
               <RowDiv>
@@ -64,6 +78,7 @@ export default function Form(props) {
                 label="Aporte inicial"
                 id="aporteInicial"
                 name="aporteInicial"
+                placeholder="999.99"
                 value={formik.values.aporteInicial}
                 onChange={formik.handleChange}
                 type="number"
@@ -82,8 +97,14 @@ export default function Form(props) {
                 id="prazo"
                 name="prazo"
                 type="number"
+                placeholder="em meses"
                 value={formik.values.prazo}
-                onChange={formik.handleChange}
+                onChange={e => {
+                  if (e.target.value > 12) {
+                    return;
+                  }
+                  formik.handleChange(e);
+                }}
                 error={formik.touched.prazo && Boolean(formik.errors.prazo)}
                 helperText={formik.touched.prazo && formik.errors.prazo}
               />
@@ -94,6 +115,7 @@ export default function Form(props) {
                 id="ipca"
                 name="ipca"
                 type="number"
+                placeholder="em %"
                 value={formik.values.ipca}
                 onChange={formik.handleChange}
                 error={formik.touched.ipca && Boolean(formik.errors.ipca)}
@@ -108,11 +130,16 @@ export default function Form(props) {
           </Grid>
         </Grid>
         <Grid item xs={6}>
-          <Grid container spacing={3}>
+          <Grid
+            container
+            spacing={3}
+            justifyContent="center"
+            alignItems="center"
+          >
             <Grid item xs={12}>
-              <Typography variant="subtitle1" gutterBottom component="div">
+              <ColumnTitle variant="subtitle1" mobile={mobile}>
                 Tipos de indexação
-              </Typography>
+              </ColumnTitle>
             </Grid>
             <Grid item xs={12}>
               <RowDiv>
@@ -148,11 +175,11 @@ export default function Form(props) {
             <Grid item xs={12}>
               <Input
                 label="Aporte mensal"
-                type="number"
-                id="aporteMensal"
-                name="aporteMensal"
                 value={formik.values.aporteMensal}
                 onChange={formik.handleChange}
+                placeholder="999.99"
+                id="aporteMensal"
+                name="aporteMensal"
                 error={
                   formik.touched.aporteMensal &&
                   Boolean(formik.errors.aporteMensal)
@@ -167,6 +194,7 @@ export default function Form(props) {
                 label="Rentabilidade"
                 id="rentabilidade"
                 name="rentabilidade"
+                placeholder="em %"
                 type="number"
                 value={formik.values.rentabilidade}
                 onChange={formik.handleChange}
@@ -186,6 +214,7 @@ export default function Form(props) {
                 id="cdi"
                 name="cdi"
                 type="number"
+                placeholder="em %"
                 value={formik.values.cdi}
                 onChange={formik.handleChange}
                 error={formik.touched.cdi && Boolean(formik.errors.cdi)}

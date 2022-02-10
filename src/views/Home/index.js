@@ -6,6 +6,7 @@ import {
   CircularProgress,
   Alert,
   Snackbar,
+  useMediaQuery
 } from "@mui/material";
 
 import { useFormik } from "formik";
@@ -30,6 +31,8 @@ const validationSchema = yup.object({
 function Home() {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
+
+  const mobile = useMediaQuery("(max-width:400px)");
 
   const submit = async ({ tipoIndexacao, tipoRendimento }) => {
     setLoading(oldState => !oldState);
@@ -82,7 +85,7 @@ function Home() {
   }, []);
 
   return (
-    <MainDiv>
+    <MainDiv mobile={mobile}>
       <Snackbar
         open={data === null}
         autoHideDuration={6000}
@@ -115,19 +118,21 @@ function Home() {
             align="left"
             fontWeight={"bold"}
           >
-            Simulador  
+            Simulador
           </Typography>
         </Grid>
         <Grid item xs={6}>
-          <Typography
-            variant="h6"
-            gutterBottom
-            component="div"
-            align="left"
-            fontWeight={"bold"}
-          >
-            Resultado da simulação
-          </Typography>
+          {data && (
+            <Typography
+              variant="h6"
+              gutterBottom
+              component="div"
+              align="left"
+              fontWeight={"bold"}
+            >
+              Resultado da simulação
+            </Typography>
+          )}
         </Grid>
         <Grid item xs={12}>
           <Grid
@@ -135,6 +140,7 @@ function Home() {
             direction="row"
             justifyContent="space-between"
             alignItems="center"
+            spacing={3}
           >
             <Form formik={formik} />
             {data && <DataGrid data={data} />}
